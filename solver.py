@@ -75,8 +75,8 @@ class Solver:
                 arcs = list()
                 
                 for xj in self.csp.neighbors[var]:
-                    # if xj not in assignment:
-                    arcs.append([var, xj])
+                    if xj not in assignment:
+                        arcs.append([var, xj])  
                 
                 passed = self.AC3(arcs, assignment)
                 if passed:
